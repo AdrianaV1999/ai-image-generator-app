@@ -13,7 +13,7 @@
   border-radius: 999px;
   border: 1px solid #313131;
   padding: 1rem 2.8rem;
-  width: 75%;
+  width: 80%;
   z-index: 100;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -134,7 +134,7 @@
 
 @media (max-width: 768px) {
   .navbar {
-    width: 90%;
+    width: 92%;
     padding: 1rem 2rem;
   }
   .logo img {
@@ -151,9 +151,9 @@
   }
 }
 
-@media (min-width: 769px) and (max-width: 1300px) {
+@media (min-width: 769px) and (max-width: 1400px) {
   .navbar {
-    width: 90%;
+    width: 92%;
   }
 }
 @media (min-width: 769px) {

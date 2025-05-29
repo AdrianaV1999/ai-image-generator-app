@@ -44,9 +44,6 @@ const Navbar = () => {
           className={`hamburger ${menuOpen ? "open" : ""}`}
           onClick={toggleMenu}
           aria-label="Toggle menu"
-          role="button"
-          tabIndex={0}
-          onKeyDown={(e) => e.key === "Enter" && toggleMenu()}
         >
           <span></span>
           <span></span>

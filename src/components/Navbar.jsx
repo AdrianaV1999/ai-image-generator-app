@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Navbar.scss";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -9,45 +10,59 @@ const Navbar = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
+  const links = [
+    { to: "/", label: "Home" },
+    { to: "/generator", label: "Image Generator" },
+    { to: "/favorites", label: "Favorites" },
+    { to: "/faq", label: "FAQ" },
+  ];
+
   return (
-    <nav className={`navbar ${menuOpen ? "menu-open" : ""}`}>
-      <div className="logo">
-        <Link to="/">
-          <img src={logo} alt="logo" />
-        </Link>
+    <nav className="navbar">
+      <div className={`navbar-content`}>
+        <div className="logo">
+          <Link to="/" onClick={closeMenu}>
+            <img src={logo} alt="Logo" />
+          </Link>
+        </div>
+
+        <div className="spacer" />
+
+        <ul className="nav-links">
+          {links.map(({ to, label }) => (
+            <li key={to}>
+              <Link to={to}>{label}</Link>
+            </li>
+          ))}
+        </ul>
+
+        <div
+          className={`hamburger ${menuOpen ? "open" : ""}`}
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => e.key === "Enter" && toggleMenu()}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
 
-      <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-        <li>
-          <Link to="/" onClick={() => setMenuOpen(false)}>
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link to="/generator" onClick={() => setMenuOpen(false)}>
-            Image Generator
-          </Link>
-        </li>
-        <li>
-          <Link to="/favorites" onClick={() => setMenuOpen(false)}>
-            Favorites
-          </Link>
-        </li>
-        <li>
-          <Link to="/faq" onClick={() => setMenuOpen(false)}>
-            FAQ
-          </Link>
-        </li>
+      <ul className={`mobile-menu ${menuOpen ? "open" : ""}`}>
+        {links.map(({ to, label }) => (
+          <li key={to}>
+            <Link to={to} onClick={closeMenu}>
+              {label}
+            </Link>
+          </li>
+        ))}
       </ul>
-
-      <div
-        className={`hamburger ${menuOpen ? "open" : ""}`}
-        onClick={toggleMenu}
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
     </nav>
   );
 };

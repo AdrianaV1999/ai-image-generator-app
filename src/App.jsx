@@ -5,7 +5,7 @@ import ImageGenerator from "./pages/ImageGenerator";
 import Favorites from "./pages/Favorites";
 import FAQ from "./pages/FAQ";
 import Navbar from "./components/Navbar";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function App() {
   const videoRef = useRef(null);
@@ -15,6 +15,23 @@ function App() {
       videoRef.current.playbackRate = 0.8;
     }
   }, []);
+
+  const [favorites, setFavorites] = useState(() => {
+    const saved = localStorage.getItem("favorites");
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  }, [favorites]);
+
+  const toggleFavorite = (src) => {
+    if (favorites.includes(src)) {
+      setFavorites(favorites.filter((fav) => fav !== src));
+    } else {
+      setFavorites([...favorites, src]);
+    }
+  };
 
   return (
     <div className="App">
@@ -32,8 +49,19 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/generator" element={<ImageGenerator />} />
-        <Route path="/favorites" element={<Favorites />} />
+        <Route
+          path="/generator"
+          element={
+            <ImageGenerator
+              favorites={favorites}
+              toggleFavorite={toggleFavorite}
+            />
+          }
+        />
+        <Route
+          path="/favorites"
+          element={<Favorites favorites={favorites} />}
+        />
         <Route path="/faq" element={<FAQ />} />
       </Routes>
     </div>

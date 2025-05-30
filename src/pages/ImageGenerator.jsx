@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import "./ImageGenerator.scss";
+import { FiHeart } from "react-icons/fi";
+import { FiDownload } from "react-icons/fi";
+import { FaHeart } from "react-icons/fa";
 
 const API_URL = "https://api.vyro.ai/v2/image/generations";
 const API_TOKEN = process.env.REACT_APP_IMAGINE_ART_KEY;
 
-const ImageGenerator = () => {
+const ImageGenerator = ({ favorites, toggleFavorite }) => {
   const [prompt, setPrompt] = useState(
     "A futuristic cityscape at night with neon lights"
   );
@@ -111,7 +114,11 @@ const ImageGenerator = () => {
         </div>
       </div>
 
-      <button onClick={handleGenerate} disabled={loading}>
+      <button
+        className="button-generate"
+        onClick={handleGenerate}
+        disabled={loading}
+      >
         {loading ? "Generating..." : "Generate Image"}
       </button>
 
@@ -120,7 +127,28 @@ const ImageGenerator = () => {
       {imageSrcList.length > 0 && (
         <div className={`image-result image-count-${imageSrcList.length}`}>
           {imageSrcList.map((src, index) => (
-            <img key={index} src={src} alt={`Generated ${index}`} />
+            <div key={index} className="image-wrapper">
+              <img src={src} alt={`Generated ${index}`} />
+              <a
+                href={src}
+                download={`image-${index + 1}.png`}
+                className="download-icon"
+                title="Download"
+              >
+                <FiDownload />
+              </a>
+              <button
+                className="favorite-icon"
+                onClick={() => toggleFavorite(src)}
+                aria-label="Toggle Favorite"
+              >
+                {favorites.includes(src) ? (
+                  <FaHeart color="red" />
+                ) : (
+                  <FiHeart color="white" />
+                )}
+              </button>
+            </div>
           ))}
         </div>
       )}

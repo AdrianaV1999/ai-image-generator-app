@@ -32,6 +32,7 @@ function App() {
       setFavorites([...favorites, src]);
     }
   };
+  console.log(localStorage.getItem("favorites"));
 
   return (
     <div className="App">

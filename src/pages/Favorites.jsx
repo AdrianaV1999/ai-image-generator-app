@@ -7,7 +7,6 @@ const Favorites = ({ favorites }) => {
   return (
     <div className="favorites">
       {favorites.length === 0 ? <p>No favorites yet.</p> : <h2>♡ Favorites</h2>}
-
       <div className="favorites-list">
         {favorites.map((src, index) => (
           <img

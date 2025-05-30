@@ -33,7 +33,6 @@ function App() {
       setFavorites([...favorites, src]);
     }
   };
-  console.log(localStorage.getItem("favorites"));
 
   return (
     <div className="App">
@@ -48,24 +47,26 @@ function App() {
         <source src="/galaxy.mp4" type="video/mp4" />
       </video>{" "}
       <div className="background-blur"></div>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="/generator"
-          element={
-            <ImageGenerator
-              favorites={favorites}
-              toggleFavorite={toggleFavorite}
-            />
-          }
-        />
-        <Route
-          path="/favorites"
-          element={<Favorites favorites={favorites} />}
-        />
-        <Route path="/faq" element={<FAQ />} />
-      </Routes>
+      <Navbar />{" "}
+      <div className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/generator"
+            element={
+              <ImageGenerator
+                favorites={favorites}
+                toggleFavorite={toggleFavorite}
+              />
+            }
+          />
+          <Route
+            path="/favorites"
+            element={<Favorites favorites={favorites} />}
+          />
+          <Route path="/faq" element={<FAQ />} />
+        </Routes>
+      </div>
       <Footer />
     </div>
   );

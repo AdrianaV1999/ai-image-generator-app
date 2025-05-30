@@ -3,23 +3,25 @@ import "./FAQ.scss";
 
 const faqData = [
   {
-    question: "What image styles can I generate?",
+    question: "How long does it take to generate an image?",
     answer:
-      "Available styles include: realistic, anime, flux-schnell, flux-dev, flux-dev-fast, sdxl-1.0 and imagine-turbo.",
+      "It usually takes a few seconds, depending on the selected style. Some models like 'imagine-turbo' are faster, while others like 'sdxl-1.0' and 'realistic' might take a bit more time.",
   },
   {
-    question: "What aspect ratios are supported?",
+    question: "Why do my images sometimes look different from what I expected?",
     answer:
-      "Supported aspect ratios are: 1:1, 3:2, 4:3, 3:4, 16:9, and 9:16 to fit various needs.",
+      "AI-generated images can vary based on prompt wording, selected style, and aspect ratio. Try adjusting your prompt or using a different style for better results.",
   },
   {
-    question: "How many images can I generate at once?",
-    answer: "You can generate up to 4 images in a single generation attempt.",
-  },
-  {
-    question: "How do I select a style or ratio for image generation?",
+    question: "What kind of prompts work best?",
     answer:
-      "When submitting your request, choose your preferred style from the available styles and select one of the supported aspect ratios before generating the images.",
+      "Be specific and descriptive. Mention details like style, lighting, mood, subject, or background for better results. Example: 'A futuristic city at sunset, in anime style.'",
+  },
+
+  {
+    question: "What if my image generation fails?",
+    answer:
+      "If a generation fails, it might be due to server load, invalid prompt input, or an unsupported combination of options. Try again or adjust your settings.",
   },
 ];
 

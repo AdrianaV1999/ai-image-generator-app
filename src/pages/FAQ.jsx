@@ -50,10 +50,7 @@ const FAQ = () => {
             </button>
             <div
               id={`faq-answer-${index}`}
-              className="faq-answer"
-              style={{
-                maxHeight: activeIndex === index ? "200px" : "0",
-              }}
+              className={`faq-answer ${activeIndex === index ? "open" : ""}`}
             >
               <p>{item.answer}</p>
             </div>

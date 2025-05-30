@@ -6,6 +6,7 @@ import Favorites from "./pages/Favorites";
 import FAQ from "./pages/FAQ";
 import Navbar from "./components/Navbar";
 import { useEffect, useRef, useState } from "react";
+import Footer from "./components/Footer";
 
 function App() {
   const videoRef = useRef(null);
@@ -65,6 +66,7 @@ function App() {
         />
         <Route path="/faq" element={<FAQ />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

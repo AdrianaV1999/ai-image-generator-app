@@ -1,0 +1,130 @@
+.image-generator {
+  max-width: 700px;
+  margin: 12rem auto;
+  padding: 2rem;
+  background: #1a1a2e;
+  color: #eee;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+
+  h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    margin-top: 0rem;
+    color: #ffffff;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #e7d1ff;
+    }
+
+    textarea,
+    select,
+    input[type="number"] {
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 6px;
+      border: 1px solid #444;
+      background: #0f1624;
+      color: #f3f3f3;
+      font-size: 1rem;
+      resize: vertical;
+
+      &:focus {
+        outline: none;
+        border-color: #ffffff;
+      }
+    }
+
+    input[type="number"] {
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+  }
+
+  .form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    .form-group {
+      flex: 1;
+    }
+  }
+
+  button {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #1a1a2e;
+    font-weight: 700;
+    cursor: pointer;
+
+    &:hover:not(:disabled) {
+      background: #dec0ff;
+    }
+
+    &:disabled {
+      background: #555;
+      cursor: not-allowed;
+    }
+  }
+
+  .error {
+    margin-top: 1rem;
+    color: #ff5555;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .image-result {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 5px #dec0ff;
+      object-fit: cover;
+    }
+
+    &.image-count-1 {
+      grid-template-columns: 1fr;
+    }
+
+    &.image-count-2 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &.image-count-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &.image-count-4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .image-result {
+      grid-template-columns: 1fr !important;
+    }
+  }
+  @media (max-width: 768px) {
+    margin: 9rem 1.5rem;
+  }
+}

@@ -57,7 +57,6 @@ const ImageGenerator = ({ favorites, toggleFavorite }) => {
       setLoading(false);
     }
   };
-
   return (
     <div className="image-generator">
       <h1>AI Image Generator</h1>
@@ -137,15 +136,22 @@ const ImageGenerator = ({ favorites, toggleFavorite }) => {
               >
                 <FiDownload />
               </a>
+
               <button
                 className="favorite-icon"
-                onClick={() => toggleFavorite(src)}
+                onClick={() =>
+                  toggleFavorite({
+                    id: src,
+                    src: src,
+                    alt: `Generated image`,
+                  })
+                }
                 aria-label="Toggle Favorite"
               >
-                {favorites.includes(src) ? (
-                  <FaHeart color="red" />
+                {favorites.some((fav) => fav.id === src) ? (
+                  <FaHeart className="heart-icon" color="red" />
                 ) : (
-                  <FiHeart color="white" />
+                  <FiHeart className="heart-icon" color="white" />
                 )}
               </button>
             </div>

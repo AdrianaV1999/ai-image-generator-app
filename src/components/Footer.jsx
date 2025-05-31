@@ -10,13 +10,11 @@ const Footer = () => {
     <footer className="footer">
       <div className="logo-container">
         <Link to="/">
-          <img src={logo} className="footer-logo" />
+          <img src={logo} className="footer-logo" alt="Logo" />
         </Link>
       </div>
       <hr className="footer-line" />
-      <p className="footer-text">
-        <p className="footer-text">© {year} AI.Maker. All rights reserved.</p>
-      </p>
+      <p className="footer-text">© {year} AI.Maker. All rights reserved.</p>
     </footer>
   );
 };

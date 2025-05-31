@@ -1,0 +1,136 @@
+.usage {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0rem 12rem;
+  margin-bottom: 8rem;
+
+  .usage-text {
+    flex: 1;
+    max-width: 700px;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 1s ease-out;
+
+    h2 {
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
+      font-weight: 500;
+      color: white;
+    }
+
+    .usage-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      .usage-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+
+        .circle {
+          width: 45px;
+          height: 45px;
+          min-width: 45px;
+          min-height: 45px;
+          text-align: center;
+          line-height: 45px;
+
+          border-radius: 50%;
+          background: linear-gradient(to right, #ad7cdb, #9a45f5);
+          color: white;
+          font-weight: bold;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 1rem;
+          font-size: 1.2rem;
+        }
+
+        .usage-content {
+          h4 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: white;
+          }
+
+          p {
+            margin: 0.3rem 0 0;
+            font-size: 1rem;
+            color: white;
+            opacity: 0.85;
+          }
+        }
+      }
+    }
+  }
+
+  .usage-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 1s ease-out 0.5s;
+    margin-top: 4rem;
+    img {
+      width: 100%;
+      max-width: 550px;
+      height: auto;
+      border-radius: 30px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &.active {
+    .usage-image {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .usage-text {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @media (max-width: 1400px) and (min-width: 901px) {
+    padding: 0rem 5rem;
+  }
+
+  @media (max-width: 900px) {
+    padding: 0rem 2rem;
+    margin-bottom: 2rem;
+    flex-direction: column;
+    gap: 1rem;
+
+    .usage-text {
+      max-width: 100%;
+      text-align: left;
+
+      h2 {
+        text-align: center;
+        font-size: 2rem;
+      }
+
+      .usage-list {
+        .usage-item {
+          .circle {
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
+
+    .usage-image {
+      justify-content: center;
+      margin-top: -20px;
+      margin-right: 20px;
+      img {
+        max-width: 370px;
+        border-radius: 20px;
+      }
+    }
+  }
+}

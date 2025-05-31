@@ -45,9 +45,9 @@ function App() {
         className="bg-video"
       >
         <source src="/galaxy.mp4" type="video/mp4" />
-      </video>{" "}
+      </video>
       <div className="background-blur"></div>
-      <Navbar />{" "}
+      <Navbar />
       <div className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />

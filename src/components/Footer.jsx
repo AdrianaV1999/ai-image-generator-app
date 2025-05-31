@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Footer.scss";
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const [year] = useState(new Date().getFullYear());
+
   return (
     <footer className="footer">
       <div className="logo-container">
@@ -12,7 +14,9 @@ const Footer = () => {
         </Link>
       </div>
       <hr className="footer-line" />
-      <p className="footer-text">© 2025 AI.Maker. All rights reserved.</p>
+      <p className="footer-text">
+        <p className="footer-text">© {year} AI.Maker. All rights reserved.</p>
+      </p>
     </footer>
   );
 };

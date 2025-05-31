@@ -11,7 +11,6 @@
     opacity: 0;
     transform: translateX(-50px);
     transition: all 1s ease-out;
-
     h2 {
       font-size: 2.4rem;
       margin-bottom: 1rem;
@@ -82,7 +81,6 @@
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     }
   }
-
   &.active {
     .usage-image {
       opacity: 1;
@@ -94,7 +92,6 @@
       transform: translateX(0);
     }
   }
-
   @media (max-width: 1400px) and (min-width: 901px) {
     padding: 0rem 5rem;
   }

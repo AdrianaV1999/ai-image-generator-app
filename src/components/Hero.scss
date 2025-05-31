@@ -1,6 +1,8 @@
 .hero-section {
   position: relative;
   padding: 9rem 12rem;
+  margin-bottom: 1rem;
+
   .hero-content {
     display: flex;
     align-items: center;
@@ -55,8 +57,9 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     padding: 7rem 2rem;
+    margin-bottom: 0rem;
 
     .hero-content {
       flex-direction: column;
@@ -96,7 +99,7 @@
     }
   }
 
-  @media (min-width: 769px) and (max-width: 1400px) {
+  @media (min-width: 901px) and (max-width: 1400px) {
     padding: 10rem 3rem;
     .hero-content {
       .text-content {

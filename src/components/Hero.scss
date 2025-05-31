@@ -2,7 +2,19 @@
   position: relative;
   padding: 9rem 12rem;
   margin-bottom: 1rem;
+  &.active {
+    .hero-content {
+      .text-content {
+        opacity: 1;
+        transform: translateX(0);
+      }
 
+      .image-container {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
   .hero-content {
     display: flex;
     align-items: center;
@@ -12,7 +24,9 @@
     animation: fadeIn 1s ease-in;
     .text-content {
       max-width: 600px;
-      animation: slideInLeft 2s ease forwards;
+      opacity: 0;
+      transform: translateX(-150px);
+      transition: all 1s ease;
 
       .hero-title {
         font-size: 3.4rem;
@@ -48,7 +62,9 @@
     .image-container {
       flex: 1;
       text-align: right;
-      animation: slideInUp 1s ease forwards;
+      opacity: 0;
+      transform: translateY(150px);
+      transition: all 1s ease;
 
       .hero-image {
         max-width: 580px;
@@ -136,27 +152,6 @@
   }
 }
 
-@keyframes slideInLeft {
-  from {
-    transform: translateX(-150px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInUp {
-  from {
-    transform: translateY(150px);
-    opacity: 1;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
 .gradient-text {
   background: linear-gradient(270deg, #7b61ff, #8c1eff, #ff61ff, #7b61ff);
   background-size: 600% 600%;

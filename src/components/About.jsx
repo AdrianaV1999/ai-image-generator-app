@@ -43,7 +43,7 @@ const About = () => {
             intelligence. Designed for artists, creators, and innovators, it
             enables rapid image generation with precision and creativity. By
             merging technology with imagination, AI Image Maker opens new
-            possibilities in digital art, design, and visual storytelling!
+            possibilities in digital art, design and visual storytelling!
           </p>
         </div>
       </div>

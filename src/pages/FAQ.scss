@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 .faq-container {
   max-width: 700px;
   margin: 12rem auto;
@@ -55,6 +61,7 @@
   background: #fff;
   padding: 0 1.5rem;
   border-radius: 10px;
+  width: 100%;
 
   p {
     margin: 0.75rem 0 1.25rem;

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Favorites.scss";
 import { FiX } from "react-icons/fi";
+import ImageModal from "../components/ImageModal";
 
 const Favorites = ({ favorites, imageMap, removeFavorite }) => {
   const [modalSrc, setModalSrc] = useState(null);
@@ -30,17 +31,7 @@ const Favorites = ({ favorites, imageMap, removeFavorite }) => {
         )}
       </div>
 
-      {modalSrc && (
-        <div
-          className="modal-overlay"
-          onClick={() => setModalSrc(null)}
-          role="button"
-          tabIndex={0}
-          onKeyDown={(e) => e.key === "Escape" && setModalSrc(null)}
-        >
-          <img src={modalSrc} alt="Enlarged favorite" />
-        </div>
-      )}
+      <ImageModal src={modalSrc} onClose={() => setModalSrc(null)} />
     </div>
   );
 };

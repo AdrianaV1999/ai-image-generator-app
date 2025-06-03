@@ -3,6 +3,7 @@ import "./ImageGenerator.scss";
 import { FiHeart } from "react-icons/fi";
 import { FiDownload } from "react-icons/fi";
 import { FaHeart } from "react-icons/fa";
+import ImageModal from "../components/ImageModal";
 
 const API_URL = "https://api.vyro.ai/v2/image/generations";
 const API_TOKEN = process.env.REACT_APP_IMAGINE_ART_KEY;
@@ -17,6 +18,7 @@ const ImageGenerator = ({ favorites, toggleFavorite }) => {
   const [numImages, setNumImages] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [modalSrc, setModalSrc] = useState(null);
 
   const handleGenerate = async () => {
     setLoading(true);
@@ -127,7 +129,11 @@ const ImageGenerator = ({ favorites, toggleFavorite }) => {
         <div className={`image-result image-count-${imageSrcList.length}`}>
           {imageSrcList.map((src, index) => (
             <div key={index} className="image-wrapper">
-              <img src={src} alt={`Generated ${index}`} />
+              <img
+                src={src}
+                alt={`Generated ${index}`}
+                onClick={() => setModalSrc(src)}
+              />
               <a
                 href={src}
                 download={`image-${index + 1}.png`}
@@ -158,6 +164,7 @@ const ImageGenerator = ({ favorites, toggleFavorite }) => {
           ))}
         </div>
       )}
+      <ImageModal src={modalSrc} onClose={() => setModalSrc(null)} />
     </div>
   );
 };

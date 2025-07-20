@@ -2,7 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
-
+const redirect = window.location.search.match(/redirect=(.+)/);
+if (redirect) {
+  window.history.replaceState(null, null, decodeURIComponent(redirect[1]));
+}
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter basename="/ai-image-generator-app">

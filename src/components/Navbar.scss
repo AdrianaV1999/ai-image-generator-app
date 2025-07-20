@@ -5,18 +5,17 @@
 }
 
 .navbar {
-  position: fixed;
+  position: sticky;
   top: 1rem;
   left: 0;
   right: 0;
   margin: 0 auto;
-
   background-color: #111114;
   border-radius: 999px;
   border: 1px solid #313131;
   padding: 1rem 2.8rem;
   width: 80%;
-  z-index: 100;
+  z-index: 999;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
@@ -62,7 +61,6 @@
   transform: translateX(-50%);
   background-color: #111114;
   border-radius: 1rem;
-
   padding: 0 2rem;
   width: 99%;
   max-height: 0;

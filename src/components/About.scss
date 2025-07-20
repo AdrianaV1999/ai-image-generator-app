@@ -16,18 +16,21 @@
       }
     }
   }
+
   .about-content {
     display: flex;
     align-items: center;
     gap: 3rem;
     position: relative;
     z-index: 2;
+
     .about-image {
       flex: 1;
       text-align: left;
       opacity: 0;
       transform: translateX(-50px);
       transition: all 1s ease-out 0.5s;
+
       img {
         max-width: 500px;
         height: auto;
@@ -41,6 +44,7 @@
       transform: translateX(50px);
       transition: all 1s ease-out;
       margin-top: -1.5rem;
+      
       h2 {
         font-size: 2.4rem;
         margin-bottom: 1rem;

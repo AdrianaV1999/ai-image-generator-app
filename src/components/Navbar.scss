@@ -7,8 +7,10 @@
 .navbar {
   position: fixed;
   top: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+
   background-color: #111114;
   border-radius: 999px;
   border: 1px solid #313131;

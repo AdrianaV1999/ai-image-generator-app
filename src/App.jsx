@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 
 function App() {
   const videoRef = useRef(null);
+
   const [favorites, setFavorites] = useState(() => {
     const saved = localStorage.getItem("favorites");
     return saved ? JSON.parse(saved) : [];
@@ -36,6 +37,7 @@ function App() {
     }
     return null;
   };
+
   const toggleFavorite = async (imageObj) => {
     const exists = favorites.find((fav) => fav.id === imageObj.id);
     if (exists) {
@@ -45,6 +47,7 @@ function App() {
       setFavorites([...favorites, { id: imageObj.id, alt: imageObj.alt }]);
     }
   };
+
   const [imageMap, setImageMap] = useState({});
 
   useEffect(() => {
@@ -61,11 +64,13 @@ function App() {
 
     loadCachedImages();
   }, [favorites]);
+
   const removeFavorite = (id) => {
     setFavorites((prev) => prev.filter((fav) => fav.id !== id));
     const updated = favorites.filter((fav) => fav.id !== id);
     localStorage.setItem("favorites", JSON.stringify(updated));
   };
+
   return (
     <div className="App">
       <video

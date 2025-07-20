@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./FAQ.scss";
 
 const faqData = [
@@ -27,37 +27,51 @@ const faqData = [
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
+  const contentRefs = useRef([]);
 
   const toggleFAQ = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
+  useEffect(() => {
+    contentRefs.current = contentRefs.current.slice(0, faqData.length);
+  }, []);
+
   return (
     <div className="faq-container">
       <h2>Frequently Asked Questions</h2>
       <div className="faq-list">
-        {faqData.map((item, index) => (
-          <div
-            key={index}
-            className={`faq-item ${activeIndex === index ? "active" : ""}`}
-          >
-            <button
-              className="faq-question"
-              onClick={() => toggleFAQ(index)}
-              aria-expanded={activeIndex === index}
-              aria-controls={`faq-answer-${index}`}
-            >
-              <span>{item.question}</span>
-              <span className="arrow">&#9656;</span>
-            </button>
-            <div
-              id={`faq-answer-${index}`}
-              className={`faq-answer ${activeIndex === index ? "open" : ""}`}
-            >
-              <p>{item.answer}</p>
+        {faqData.map((item, index) => {
+          const isActive = activeIndex === index;
+          return (
+            <div key={index} className={`faq-item ${isActive ? "active" : ""}`}>
+              <button
+                className="faq-question"
+                onClick={() => toggleFAQ(index)}
+                aria-expanded={isActive}
+                aria-controls={`faq-answer-${index}`}
+              >
+                <span>{item.question}</span>
+                <span className="arrow">&#9656;</span>
+              </button>
+              <div
+                id={`faq-answer-${index}`}
+                className={`faq-answer ${isActive ? "open" : ""}`}
+                ref={(el) => (contentRefs.current[index] = el)}
+                style={{
+                  maxHeight: isActive
+                    ? `${contentRefs.current[index]?.scrollHeight}px`
+                    : "0px",
+                  paddingTop: isActive ? "0.75rem" : "0",
+                  paddingBottom: isActive ? "1.25rem" : "0",
+                  transition: "max-height 0.35s ease, padding 0.35s ease",
+                }}
+              >
+                <p>{item.answer}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

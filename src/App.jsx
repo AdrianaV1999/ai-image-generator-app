@@ -81,7 +81,7 @@ function App() {
         playsInline
         className="bg-video"
       >
-        <source src="/galaxy.mp4" type="video/mp4" />
+        <source src={`${process.env.PUBLIC_URL}/galaxy.mp4`} type="video/mp4" />
       </video>
       <div className="background-blur"></div>
       <Navbar />

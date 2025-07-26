@@ -62,11 +62,11 @@ To run this project locally:
 
 3. Install dependencies:
    
-   ### `npm install`
+   #### `npm install`
 
 4. Start the development server:
    
-   ### `npm start`
+   #### `npm start`
 
 This will start the app locally at: `http://localhost:3000`
 

@@ -7,9 +7,12 @@ import FAQ from "./pages/FAQ";
 import Navbar from "./components/Navbar";
 import { useEffect, useRef, useState } from "react";
 import Footer from "./components/Footer";
+import { useLocation } from "react-router-dom";
 
 function App() {
   const videoRef = useRef(null);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   const [favorites, setFavorites] = useState(() => {
     const saved = localStorage.getItem("favorites");
@@ -83,7 +86,9 @@ function App() {
       >
         <source src={`${process.env.PUBLIC_URL}/galaxy.mp4`} type="video/mp4" />
       </video>
-      <div className="background-blur"></div>
+
+      <div className={`background-blur ${isHome ? "home-blur" : ""}`}></div>
+
       <Navbar />
       <div className="main-content">
         <Routes>

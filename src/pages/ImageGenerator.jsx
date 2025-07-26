@@ -12,7 +12,7 @@ const ImageGenerator = ({ favorites, toggleFavorite }) => {
   const [prompt, setPrompt] = useState(
     "A futuristic cityscape at night with neon lights"
   );
-  const [style, setStyle] = useState("anime");
+  const [style, setStyle] = useState("sdxl-1.0");
   const [aspectRatio, setAspectRatio] = useState("1:1");
   const [imageSrcList, setImageSrcList] = useState([]);
   const [numImages, setNumImages] = useState(1);
@@ -77,17 +77,18 @@ const ImageGenerator = ({ favorites, toggleFavorite }) => {
         <div className="form-group">
           <label>Style:</label>
           <select value={style} onChange={(e) => setStyle(e.target.value)}>
+            {" "}
+            <option value="sdxl-1.0">SDXL 1.0</option>{" "}
+            <option value="imagine-turbo">Imagine Turbo</option>
             <option value="anime">Anime</option>
             <option value="flux-schnell">Flux Schnell</option>
             <option value="flux-dev">Flux Dev</option>
-            <option value="imagine-turbo">Imagine Turbo</option>
             <option value="realistic">Realistic</option>
-            <option value="sdxl-1.0">SDXL 1.0</option>
           </select>
         </div>
 
         <div className="form-group">
-          <label>Aspect Ratio:</label>
+          <label>Proportion:</label>
           <select
             value={aspectRatio}
             onChange={(e) => setAspectRatio(e.target.value)}

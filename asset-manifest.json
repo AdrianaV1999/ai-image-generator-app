@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/ai-image-generator-app/static/css/main.2708e33e.css",
-    "main.js": "/ai-image-generator-app/static/js/main.edf54075.js",
+    "main.css": "/ai-image-generator-app/static/css/main.a881a067.css",
+    "main.js": "/ai-image-generator-app/static/js/main.63161ae9.js",
     "static/media/about.png": "/ai-image-generator-app/static/media/about.9c5b3d0310562206126b.png",
     "static/media/guide-book.png": "/ai-image-generator-app/static/media/guide-book.6c369228d22b9b9139f5.png",
     "static/media/robot.png": "/ai-image-generator-app/static/media/robot.24adf3f262d663bda495.png",
     "index.html": "/ai-image-generator-app/index.html",
-    "main.2708e33e.css.map": "/ai-image-generator-app/static/css/main.2708e33e.css.map",
-    "main.edf54075.js.map": "/ai-image-generator-app/static/js/main.edf54075.js.map"
+    "main.a881a067.css.map": "/ai-image-generator-app/static/css/main.a881a067.css.map",
+    "main.63161ae9.js.map": "/ai-image-generator-app/static/js/main.63161ae9.js.map"
   },
   "entrypoints": [
-    "static/css/main.2708e33e.css",
-    "static/js/main.edf54075.js"
+    "static/css/main.a881a067.css",
+    "static/js/main.63161ae9.js"
   ]
 }

@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# AI Image Generator App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This application enables image generation through artificial intelligence based on user input. It is built with **React.js** and styled using **SCSS (Sassy Cascading Style Sheets)**.
 
-## Available Scripts
+## Live Preview
 
-In the project directory, you can run:
+Check out the live app here:  
+https://adrianav1999.github.io/ai-image-generator-app
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Generate images by describing what you want the AI to create.
+- Choose from different styles such as anime, realistic, Flux Shell and more.
+- Select aspect ratio and number of images to generate at once.
+- Download generated images directly to your device.
+- Save images as favorites and manage them by adding or removing.
+- Provides answers to frequently asked questions related to the app.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Components
 
-### `npm test`
+- **Navbar.jsx** — Handles navigation between different pages.
+- **Hero.jsx** — Main introduction section with call-to-action.
+- **About.jsx** — Explains the app’s purpose and background.
+- **UsageGuide.jsx** — Step-by-step instructions on how to use the app.
+- **ImageModal.jsx** — Displays generated images with interactive options.
+- **Footer.jsx** — Contains footer information.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Pages
 
-### `npm run build`
+- **Home** — The landing page.
+- **ImageGenerator** — Interface to create AI-generated images.
+- **Favorites** — Displays all saved favorite images.
+- **FAQ** — Section for common questions and answers.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Routing Concept
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Navigation is managed with **React Router**, enabling smooth client-side transitions between the main pages without reloading the entire site. This setup ensures a seamless user experience while switching between Home, ImageGenerator, Favorites and FAQ pages.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## API Integrations
 
-### `npm run eject`
+- **Imagine Art API** — Responsible for generating images based on the user’s description and chosen parameters.
+- **Cache API** — Used to store previously generated images locally, which helps reduce unnecessary API requests and speeds up image retrieval.
+- **Intersection Observer API** — Utilized to detect when elements enter the viewport, allowing animations to trigger smoothly as the user scrolls through the app.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Technologies Used
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **React.js** for building the frontend interface.
+- **SCSS (Sassy Cascading Style Sheets)** for organizing and maintaining styles efficiently.
+- Integration with multiple web APIs **(Imagine Art API, Cache API, Intersection Observer API)** to enable image generation, caching and animated effects.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Installation / How to Run
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To run this project locally:
 
-## Learn More
+1. Clone the repository:
+   
+   #### `git clone https://github.com/AdrianaV1999/ai-image-generator-app.git`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. Navigate into the project folder:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   #### `cd ai-image-generator-app`
 
-### Code Splitting
+3. Install dependencies:
+   
+   ### `npm install`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4. Start the development server:
+   
+   ### `npm start`
 
-### Analyzing the Bundle Size
+This will start the app locally at: `http://localhost:3000`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project highlights practical experience in integrating APIs, implementing client-side routing and applying styling techniques.

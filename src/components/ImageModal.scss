@@ -12,9 +12,16 @@
   z-index: 100007;
 
   img {
-    max-width: 90vw;
-    max-height: 90vh;
+    max-width: 72%;
+    max-height: 72%;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    img {
+      max-width: 85%;
+      max-height: 85%;
+    }
   }
 }

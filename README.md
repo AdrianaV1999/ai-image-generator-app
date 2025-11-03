@@ -36,7 +36,7 @@ https://adrianav1999.github.io/ai-image-generator-app
 
 - **Imagine Art API** — Responsible for generating images based on the user's description and chosen parameters.
 - **Cache API** — Used to store previously generated images locally.
-- **Intersection Observer API** — Utilized to detect when elements enter the viewport, allowing animations to trigger smoothly as the user scrolls through the app.
+- **Intersection Observer API** — Used to detect when elements enter the viewport, allowing animations to trigger smoothly as the user scrolls through the app.
 
 ## Technologies Used
 
